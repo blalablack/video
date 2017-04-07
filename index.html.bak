@@ -21,7 +21,6 @@
 	<video controls>
 		<source src="big_buck_bunny.mp4">
 		<track label="英语" kind="subtitles" src="mediaelement.vtt" srclang="en">
-		<track label="汗语" kind="subtitles" src="mediaelement.vtt" srclang="en">
 	</video>
  </body>
 </html>
