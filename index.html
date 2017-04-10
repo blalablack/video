@@ -2,26 +2,38 @@
 <html>
  <head>
   <meta charset="UTF-8">
+  <script src="jquery.js"></script>
+  <script src="mediaelement-and-player.min.js"></script>
+  <link rel="stylesheet" href="mediaelementplayer.min.css" />
   <title>HTML5</title>
-  <style type="text/css">
-	div{
-		width:200px;
-		height:50px;
-	}
-	input{
-		width:20px;
-		height:20px;
-		float:left;
-
-	}
-
-  </style>
  </head>
  <body>
-	<video controls>
-		<source src="big_buck_bunny.mp4">
-		<track label="英语" kind="subtitles" src="mediaelement.vtt" srclang="en">
-		<track label="汗语" kind="subtitles" src="mediaelement.vtt" srclang="en">
-	</video>
+ <video id="mediaplayer" width="640" height="360"  type="video/mp4" id="player1" controls="controls" preload="none" >不知此
+	<source src="http://oljtqy7i8.bkt.clouddn.com/big_buck_bunny.mp4">
+	<track label="英语" kind="subtitles" src="http://oljtqy7i8.bkt.clouddn.com/mediaelement.vtt" srclang="en" type="text/vtt">
+	<track label="汉语" kind="subtitles" src="http://oljtqy7i8.bkt.clouddn.com/blukid.vtt" srclang="en" type="text/vtt">
+
+	<!--<object type="application/x-shockwave-flash" data="flash-player.swf?videoUrl=big_buck_bunny.mp4" width="1024" height="576">
+				<param name="movie" value="flash-player.swf?videoUrl=big_buck_bunny.mp4" />
+				<param name="allowfullscreen" value="true" />
+				<param name="wmode" value="transparent" />
+				<param name="flashvars" value="controlbar=over&amp;image=img/poster.jpg&amp;file=flash-player.swf?videoUrl=big_buck_bunny.mp4" />
+				
+			</object>-->
+ </video>
+ 
  </body>
+<script>
+	
+    $('#mediaplayer').mediaelementplayer({
+    	//pluginPath: "/path/to/shims/", 
+		tracksText:"5656",
+		features:['playpause','current','progress','fullscreen','tracks','jumpforward','volume','time','jumpforward',],
+    	success: function(mediaElement, originalNode) {
+	        // do things
+		
+        }
+    });
+  $(".mejs__captions-selector-list-item input").removeAttr("disabled");
+</script>
 </html>
